@@ -1,3 +1,5 @@
+package HashUtilities;
+
 public class HashFunction {
     private static final long basisFnvOffset = 2166136261L; // Postfix L - means that number type is long
     private static final long primeFnv = 16777619L;  // Random value

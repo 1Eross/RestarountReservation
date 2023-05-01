@@ -1,3 +1,6 @@
+package HashUtilities;
+
+import HashUtilities.HashFunction;
 import InfoElements.*;
 
 public class HashTable {
@@ -9,7 +12,7 @@ public class HashTable {
     private Node[] hashtable; //неИспользуем прямое связывание для избежания коллизий, так делать не стоит, лучше открытая адресация
 
     public HashTable(int tableSize) {
-        /*this.bufferSize = PrimeNumbers.findClosestPrime(tableSize * 2);*/
+        /*this.bufferSize = HashUtilities.PrimeNumbers.findClosestPrime(tableSize * 2);*/
         this.tablesize = tableSize;
         this.bufferSize = tableSize * 2;
         hashtable = new Node[bufferSize]; // Массив параметризированного типа в java
@@ -18,9 +21,9 @@ public class HashTable {
         }*/
     }
 
-    private void reSize() {
+    private void reSize() { //Возможны ошибки, необходимо перехешировать каждый эллемент
         int pastBufferSize = bufferSize;
-        /*this.bufferSize = PrimeNumbers.findClosestPrime(pastBufferSize * 2);*/
+        /*this.bufferSize = HashUtilities.PrimeNumbers.findClosestPrime(pastBufferSize * 2);*/
         this.bufferSize *= 2;
         this.allCount = 0;
         this.currentCount = 0;
@@ -40,7 +43,7 @@ public class HashTable {
         this.hashtable = tempHashTable;
     }
 
-    private void reHash() {
+    private void reHash() { //Возможны ошибки, необходимо перехешировать каждый эллемент
         this.allCount = 0;
         this.currentCount = 0;
         Node[] tempHashTable = new Node[bufferSize];

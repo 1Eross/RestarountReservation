@@ -1,3 +1,6 @@
+package LogicalParts;
+
+import HashUtilities.HashTable;
 import InfoElements.Node;
 
 import javax.swing.*;
@@ -21,5 +24,8 @@ public class Registration {
         }
 
         return client;
+    }
+    public static Node createNewUser(HashTable logins, HashTable clients){
+        return null;
     }
 }
