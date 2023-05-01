@@ -1,19 +1,16 @@
 package HashUtilities;
 
-import HashUtilities.HashFunction;
-import InfoElements.*;
+import InfoElements.Node;
 
 public class HashTable {
     private static final double rehashSize = 0.75;
     private int currentCount = 0;
-    private int tablesize;
     private int bufferSize;
     int allCount = 0;
     private Node[] hashtable; //неИспользуем прямое связывание для избежания коллизий, так делать не стоит, лучше открытая адресация
 
     public HashTable(int tableSize) {
         /*this.bufferSize = HashUtilities.PrimeNumbers.findClosestPrime(tableSize * 2);*/
-        this.tablesize = tableSize;
         this.bufferSize = tableSize * 2;
         hashtable = new Node[bufferSize]; // Массив параметризированного типа в java
 /*        for(int i = 0; i < bufferSize; i++){
@@ -69,17 +66,14 @@ public class HashTable {
             if (hashtable[index1].key.equals(key) && hashtable[index1].isNotDeleted) {
                 return hashtable[index1];
             }
-            index1 = (index1 + index2) % tablesize;
+            index1 = (index1 + index2) % bufferSize;
             i++;
         }
         return null;
     }
 
     public boolean test(String key) {
-        if (HashFunction.HashFunction1(key, this.bufferSize) > 0 && HashFunction.HashFunction2(key, this.bufferSize) > 0) {
-            return true;
-        }
-        return false;
+        return HashFunction.HashFunction1(key, this.bufferSize) > 0 && HashFunction.HashFunction2(key, this.bufferSize) > 0;
     }
 
     public boolean remove(String key) {
@@ -92,13 +86,13 @@ public class HashTable {
                 --currentCount;
                 return true;
             }
-            index1 = (index1 + index2) % tablesize;
+            index1 = (index1 + index2) % bufferSize;
             i++;
         }
         return false;
     }
 
-    public boolean add(String key, String dataline) {
+    public void add(String key, String dataline) {
         /*
         Пытаемся найти равный
         Пытаемся найти по сходному индексу, но удаленный
@@ -115,7 +109,7 @@ public class HashTable {
         int i = 0;
         while (hashtable[index1] != null && i < bufferSize) {
             if (hashtable[index1].key.equals(key) && hashtable[index1].isNotDeleted) {
-                return false;
+                return;
             }
             if (!hashtable[index1].isNotDeleted && firstDeleted == -1) {
                 firstDeleted = index1;
@@ -131,6 +125,5 @@ public class HashTable {
             hashtable[firstDeleted].isNotDeleted = true;
         }
         currentCount++;
-        return true;
     }
 }

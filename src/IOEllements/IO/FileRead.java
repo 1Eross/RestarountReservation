@@ -1,6 +1,5 @@
 package IOEllements.IO;
 
-import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
 
@@ -20,7 +19,7 @@ public class FileRead {
     }
 
     public ArrayList<String> readLines(int firstline, int valueOfLines) throws IOException {
-        ArrayList<String> arrayList = new ArrayList<String>();
+        ArrayList<String> arrayList = new ArrayList<>();
         String line;
         for (int i = 0; i < firstline - 1; i++) {
             bufferedReader.readLine();
@@ -34,7 +33,7 @@ public class FileRead {
     }
 
     public ArrayList<String> readAll() throws IOException {
-        ArrayList<String> arrayList = new ArrayList<String>();
+        ArrayList<String> arrayList = new ArrayList<>();
         String line;
         while ((line = bufferedReader.readLine()) != null) {
             arrayList.add(line);

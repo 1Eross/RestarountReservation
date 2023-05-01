@@ -1,12 +1,9 @@
 package InfoElements;
 
-import java.util.Arrays;
-
 public class Schedule {
     static final int PARTITION = 30;
     static final int STARTWORKMINUTES = 720;
     static final int ENDWORKMINUTES = 1440;
-    boolean[] schedule = new boolean[(ENDWORKMINUTES- STARTWORKMINUTES)*60/PARTITION];
 
 
     public static int[] refractorTime(String startTime, String minutes){

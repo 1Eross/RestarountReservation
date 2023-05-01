@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 public class Database {
-    private final int TABLECOUNT = 25;
+    private static final int TABLECOUNT = 25;
 
-    private String loginTableName;
+    private final String loginTableName;
     public HashTable loginsBuffer;
 
     private String clientsTableName;
