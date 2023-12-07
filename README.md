@@ -17,5 +17,4 @@
 ![image](https://github.com/1Eross/RestarountReservation/assets/127928626/0ef3cbb1-deda-4e05-aae2-88c164a33db6)
 ![image](https://github.com/1Eross/RestarountReservation/assets/127928626/b2ebf684-a690-4d7c-8734-7aeee34f6dc9)
 ![image](https://github.com/1Eross/RestarountReservation/assets/127928626/22cec0db-407e-4e74-84a6-478883800e95)
-![image](https://github.com/1Eross/RestarountReservation/assets/127928626/152615f7-a3a8-43d7-aff3-0cbd412f27cc)
 ![image](https://github.com/1Eross/RestarountReservation/assets/127928626/5fdddf93-e0f4-41f0-b021-94e423c42cd8)
